@@ -40,7 +40,11 @@ const App = () => {
           initialInvestment={userInput['current-savings']}
         />
       ) : (
-        <p>No Investment Found.</p>
+        <p
+          style={{ fontSize: '1.0em', textAlign: 'center', color: ' #307e6c' }}
+        >
+          No Investment Found.
+        </p>
       )}
     </div>
   );

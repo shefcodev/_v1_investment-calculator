@@ -8,7 +8,7 @@ const initailUserInput = {
   'duration': 7
 };
 
-const UserInput = ({ onCalculate }) => {
+const UserInput = ({ onCalculate, onReset }) => {
   const [userInput, setUserInput] = useState(initailUserInput);
 
   const submitHandler = (event) => {
@@ -18,10 +18,11 @@ const UserInput = ({ onCalculate }) => {
 
   const resetHandler = () => {
     setUserInput(initailUserInput);
+    onReset();
   };
 
   const inputChangeHandler = (input, value) => {
-    setUserInput((prevUserInput) => ({ ...prevUserInput, [input]: value }));
+    setUserInput((prevUserInput) => ({ ...prevUserInput, [input]: +value }));
   };
 
   return (

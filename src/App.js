@@ -30,10 +30,14 @@ const App = () => {
     }
   }
 
+  const onResetHandler = () => {
+    setUserInput(null);
+  };
+
   return (
     <div>
       <Header />
-      <UserInput onCalculate={calculateHandler} />
+      <UserInput onCalculate={calculateHandler} onReset={onResetHandler} />
       {userInput ? (
         <ResultsTable
           data={yearlyData}
